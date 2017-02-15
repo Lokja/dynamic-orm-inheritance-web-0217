@@ -6,4 +6,8 @@ class Song < InteractiveRecord
     attr_accessor col_name.to_sym
   end
 
+  def self.all
+    DB[:conn].execute("SELECT * FROM songs")
+  end
+
 end
